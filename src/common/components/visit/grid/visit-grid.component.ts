@@ -42,11 +42,11 @@ export class VisitGrid extends AbstractApiGrid<Visit> {
 	}
 
 	private getDate(visit: Visit): string {
-		let dobValue = '';
+		let visitDate = '';
 		if (visit && visit.date) {
-			dobValue = this.i18nService.formatDateFullYear(visit.date);
+			visitDate = this.i18nService.formatDateFullYear(visit.date);
 		}
-		return dobValue;
+		return visitDate;
 	}
 
 	public getTotalItems() {
