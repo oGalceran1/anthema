@@ -22,10 +22,12 @@ import { GridContextMenuCellRendererComponent } from 'systelab-components/widget
 import { LoginModule } from '@features/login/login.module';
 import { PatientModule } from '@features/patient/patient.module';
 import { ComponentsModule } from '@components/components.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 	imports:         [
 		BrowserModule,
+		BrowserAnimationsModule,
 		FormsModule,
 		DragDropModule,
 		HttpClientModule,

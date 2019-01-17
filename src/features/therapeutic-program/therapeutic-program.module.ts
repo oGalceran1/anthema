@@ -4,14 +4,17 @@ import { TherapeuticProgramDetailDialog } from './therapeutic-program-detail/the
 import { SystelabTranslateModule } from 'systelab-translate';
 import { SystelabComponentsModule } from 'systelab-components';
 import { SystelabPreferencesModule } from 'systelab-preferences';
+import { TherapeuticProgramPanelComponent } from './therapeutic-program-panel/therapeutic-program-panel.component';
+import { VisitModule } from '@features/visit/visit.module';
 
 @NgModule({
-	declarations:    [TherapeuticProgramDetailDialog],
+	declarations:    [TherapeuticProgramDetailDialog, TherapeuticProgramPanelComponent],
 	imports:         [
 		CommonModule,
 		SystelabTranslateModule,
 		SystelabComponentsModule,
-		SystelabPreferencesModule
+		SystelabPreferencesModule,
+		VisitModule
 	],
 	entryComponents: [TherapeuticProgramDetailDialog]
 })

@@ -9,6 +9,7 @@ import { GridContextMenuOption } from 'systelab-components/widgets/grid/contextm
 import { I18nService } from 'systelab-translate/lib/i18n.service';
 import { PatientGrid } from '../../../common/components/patient/grid/patient-grid.component';
 import { TherapeuticProgramDetailDialog, TherapeuticProgramDetailDialogParameters } from '@features/therapeutic-program/therapeutic-program-detail/therapeutic-program-detail-dialog.component';
+import { VisitDetailDialog, VisitDetailDialogParameters } from '@features/visit/visit-detail/visit-detail-dialog.component';
 
 export class PatientSearchDialogParameters extends SystelabModalContext {
 	public width = 900;
@@ -112,7 +113,6 @@ export class PatientSearchDialog implements ModalComponent<PatientSearchDialogPa
 
 	private showTherapeuticProgram(contextMenuActionData: GridContextMenuActionData<Patient>) {
 		const parameters: TherapeuticProgramDetailDialogParameters = TherapeuticProgramDetailDialog.getParameters();
-		parameters.width = 400;
 		this.dialogService.showDialog(TherapeuticProgramDetailDialog, parameters)
 			.subscribe(res => {
 
@@ -120,7 +120,13 @@ export class PatientSearchDialog implements ModalComponent<PatientSearchDialogPa
 
 	}
 
-	private showVisit(contextMenuActionData: GridContextMenuActionData<Patient>) {
+	public showVisit(contextMenuActionData: GridContextMenuActionData<Patient>): void {
+		const parameters: VisitDetailDialogParameters = VisitDetailDialog.getParameters();
+		this.dialogService.showDialog(VisitDetailDialog, parameters)
+			.subscribe(res => {
+
+			});
+
 	}
 
 }
