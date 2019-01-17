@@ -48,5 +48,21 @@
   "PASSWORD_STRENGTH_VERY_STRONG": "Very Strong",
   "PASSWORD_CRITERIA_WEAK": "Password Criteria Weak",
   "COMMON_ADDRESS": "Address",
-  "COMMON_MEDICAL_RECORD": "Medical number"
+  "COMMON_MEDICAL_RECORD": "Medical number",
+  "COMMON_FIRST_DAY": "Monday",
+  "COMMON_SECOND_DAY": "Tuesday",
+  "COMMON_THIRD_DAY": "Wednesday",
+  "COMMON_FOURTH_DAY": "Thursday",
+  "COMMON_FIFTH_DAY": "Friday",
+  "COMMON_SIXTH_DAY": "Saturday",
+  "COMMON_SEVENTH_DAY": "Sunday",
+  "COMMON_OK": "OK",
+  "COMMON_CLEAR": "Clear",
+  "COMMON_VISIT": "Visit",
+  "COMMON_ADMISSION": "Admission",
+  "COMMON_CALENDAR": "Calendar",
+  "COMMON_TITLE": "Title",
+  "COMMON_THERAPEUTIC_PROGRAM": "Therapeutic Program"
+
+
 }

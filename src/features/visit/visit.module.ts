@@ -4,16 +4,19 @@ import { VisitDetailDialog } from '@features/visit/visit-detail/visit-detail-dia
 import { SystelabTranslateModule } from 'systelab-translate';
 import { SystelabComponentsModule } from 'systelab-components';
 import { SystelabPreferencesModule } from 'systelab-preferences';
+import { VisitDateSelectorDialog } from '@features/visit/visit-date-selector/visit-date-selector-dialog.component';
 
 @NgModule({
-	declarations:    [VisitDetailDialog],
+	declarations:    [VisitDetailDialog,
+		VisitDateSelectorDialog],
 	imports:         [
 		CommonModule,
 		SystelabTranslateModule,
 		SystelabComponentsModule,
 		SystelabPreferencesModule
 	],
-	entryComponents: [VisitDetailDialog]
+	entryComponents: [VisitDetailDialog,
+		VisitDateSelectorDialog]
 
 })
 export class VisitModule {

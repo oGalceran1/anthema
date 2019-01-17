@@ -139,7 +139,6 @@ export class MainComponent implements OnInit {
 
 	private showTherapeuticProgram(contextMenuActionData: GridContextMenuActionData<Visit>) {
 		const parameters: TherapeuticProgramDetailDialogParameters = TherapeuticProgramDetailDialog.getParameters();
-		parameters.width = 400;
 		this.dialogService.showDialog(TherapeuticProgramDetailDialog, parameters)
 			.subscribe(res => {
 
