@@ -23,18 +23,19 @@
         <div style="background-color: burlywood;" class="slab-flex-1 d-flex">
             <div class="slab-flex-1 d-flex flex-column">
 
-                    <systelab-tabs class="slab-flex-1" (select)="selectedTab($event)">
-                        <systelab-tab [id]="'Tab1'" [title]="'Tab 1'" [active]="true">
-                            <visit-grid #grid class="slab-flex-1 position-relative m-1">
-                            </visit-grid>
-                        </systelab-tab>
-                        <systelab-tab [id]="'Tab2'" [title]="'Tab 2'" [warning]="true">
-                            <visit-grid #grid class="slab-flex-1 position-relative m-1 w-100 ">
-                            </visit-grid>
-                        </systelab-tab>
-                    </systelab-tabs>
+                <systelab-tabs class="slab-flex-1" (select)="selectedTab($event)">
+                    <systelab-tab [id]="'Tab1'" [title]="'Tab 1'">
+                        <visit-grid #grid1 class="slab-flex-1 position-relative m-1">
+                        </visit-grid>
+                    </systelab-tab>
+                    <systelab-tab [id]="'Tab2'" [title]="'Tab 2'" [warning]="true">
+                        <visit-grid #grid2 class="slab-flex-1 position-relative m-1">
+                        </visit-grid>
+                    </systelab-tab>
+                </systelab-tabs>
+
                 <div class="d-flex mt-1 mb-1 mr-2">
-                    <button type="button" id="button2" class="btn ml-1" (click)="grid.showOptions()">Options</button>
+                    <button type="button" id="button2" class="btn ml-1" (click)="grid1.showOptions()">Options</button>
                     <button type="button" id="button2" class="btn ml-1" (click)="button2()">Button 2</button>
                     <button type="button" id="button2" class="btn ml-1" (click)="button2()">Button 2</button>
                     <button type="button" id="button2" class="btn ml-1" (click)="button2()">Button 2</button>
