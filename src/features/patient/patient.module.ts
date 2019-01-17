@@ -5,9 +5,10 @@ import { CommonModule } from '@angular/common';
 import { SystelabTranslateModule } from 'systelab-translate';
 import { SystelabComponentsModule } from 'systelab-components';
 import { SystelabLoginModule } from 'systelab-login';
-import { PatientMaintenanceDialog } from './patient-maintenance-dialog.component';
+import { PatientSearchDialog } from './search/patient-search-dialog.component';
 import { PatientDialog } from './patient-detail-dialog/patient-dialog.component';
 import { ComponentsModule } from '@components/components.module';
+import { TherapeuticProgramModule } from '@features/therapeutic-program/therapeutic-program.module';
 
 @NgModule({
 	imports:         [
@@ -16,14 +17,15 @@ import { ComponentsModule } from '@components/components.module';
 		SystelabTranslateModule,
 		SystelabLoginModule,
 		SystelabComponentsModule,
+		TherapeuticProgramModule,
 		ComponentsModule],
 	declarations:    [
-		PatientMaintenanceDialog,
+		PatientSearchDialog,
 		PatientDialog
 	],
 	exports:         [],
 	entryComponents: [
-		PatientMaintenanceDialog,
+		PatientSearchDialog,
 		PatientDialog
 	],
 	providers:       [
@@ -31,5 +33,5 @@ import { ComponentsModule } from '@components/components.module';
 		DialogService,
 	],
 })
-export class PatientMaintenanceModule {
+export class PatientModule {
 }

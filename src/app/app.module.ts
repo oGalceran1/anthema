@@ -20,7 +20,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { GridContextMenuCellRendererComponent } from 'systelab-components/widgets/grid/contextmenu/grid-context-menu-cell-renderer.component';
 import { LoginModule } from '@features/login/login.module';
-import { PatientMaintenanceModule } from '@features/patient-maintenance/patient-maintenance.module';
+import { PatientModule } from '@features/patient/patient.module';
 import { ComponentsModule } from '@components/components.module';
 
 @NgModule({
@@ -29,7 +29,7 @@ import { ComponentsModule } from '@components/components.module';
 		FormsModule,
 		DragDropModule,
 		HttpClientModule,
-		PatientMaintenanceModule,
+		PatientModule,
 		ComponentsModule,
 		LoginModule,
 		SystelabTranslateModule.forRoot(),

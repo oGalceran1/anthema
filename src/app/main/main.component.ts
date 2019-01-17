@@ -1,15 +1,20 @@
 import { Observable, of as observableOf } from 'rxjs';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { I18nService } from 'systelab-translate/lib/i18n.service';
 import { ApiGlobalsService } from '@globals/globals.service';
 import { Router } from '@angular/router';
 import { MessagePopupService } from 'systelab-components/widgets/modal/message-popup/message-popup.service';
 import { DialogService } from 'systelab-components/widgets/modal/dialog/dialog.service';
-import { PatientMaintenanceDialog, PatientMaintenanceDialogParameters } from '@features/patient-maintenance/patient-maintenance-dialog.component';
+import { PatientSearchDialog, PatientSearchDialogParameters } from '@features/patient/search/patient-search-dialog.component';
 import { ApplicationHeaderMenuEntry } from 'systelab-components/widgets/applicationframe/header/app-header.component';
 import { ApplicationSidebarAction, ApplicationSidebarTab } from 'systelab-components/widgets/applicationframe/sidebar/app-sidebar.component';
 import { ChangePasswordDialog, ChangePasswordDialogParameters } from 'systelab-login/widgets/change-password-dialog.component';
 import { LocalStorageService } from 'systelab-preferences/lib/local-storage.service';
+import { GridContextMenuOption } from 'systelab-components/widgets/grid/contextmenu/grid-context-menu-option';
+import { Patient } from '@model/patient';
+import { GridContextMenuActionData } from 'systelab-components/widgets/grid/contextmenu/grid-context-menu-action-data';
+import { TherapeuticProgramDetailDialog, TherapeuticProgramDetailDialogParameters } from '@features/therapeutic-program/therapeutic-program-detail/therapeutic-program-detail-dialog.component';
+import { Visit } from '@model/visit';
 
 @Component({
 	selector:    'main',
@@ -19,14 +24,11 @@ import { LocalStorageService } from 'systelab-preferences/lib/local-storage.serv
 export class MainComponent implements OnInit {
 	public title = 'Angular Seed Application';
 
-
 	public userName: string;
 	public userFullName: string;
 	public hospitalName: string;
 
 	public menu: ApplicationHeaderMenuEntry[] = [];
-	public sideactions: ApplicationSidebarAction[] = [];
-	public sidetabs: ApplicationSidebarTab[] = [];
 
 	constructor(private router: Router, protected messagePopupService: MessagePopupService,
 	            protected dialogService: DialogService, protected i18nService: I18nService,
@@ -81,8 +83,8 @@ export class MainComponent implements OnInit {
 	}
 
 	public doPatientSearch() {
-		const parameters: PatientMaintenanceDialogParameters = PatientMaintenanceDialog.getParameters();
-		this.dialogService.showDialog(PatientMaintenanceDialog, parameters)
+		const parameters: PatientSearchDialogParameters = PatientSearchDialog.getParameters();
+		this.dialogService.showDialog(PatientSearchDialog, parameters)
 			.subscribe();
 	}
 
@@ -117,4 +119,31 @@ export class MainComponent implements OnInit {
 		console.log('Button 2');
 	}
 
+	public getMenu(): Array<GridContextMenuOption<Patient>> {
+		const menuDefs: Array<GridContextMenuOption<Patient>> = [];
+		this.i18nService.get(['COMMON_ADMISSION', 'COMMON_THERAPEUTIC_PROGRAM'])
+			.subscribe((res) => {
+				menuDefs.push(new GridContextMenuOption('action1', res.COMMON_ADMISSION),
+					new GridContextMenuOption('action2', res.COMMON_THERAPEUTIC_PROGRAM)
+				);
+			});
+		return menuDefs;
+	}
+
+	public doMenuAction(contextMenuActionData: GridContextMenuActionData<Visit>) {
+		if (contextMenuActionData.actionId === 'action1') {
+		} else if (contextMenuActionData.actionId === 'action2') {
+			this.showTherapeuticProgram(contextMenuActionData);
+		}
+	}
+
+	private showTherapeuticProgram(contextMenuActionData: GridContextMenuActionData<Visit>) {
+		const parameters: TherapeuticProgramDetailDialogParameters = TherapeuticProgramDetailDialog.getParameters();
+		parameters.width = 400;
+		this.dialogService.showDialog(TherapeuticProgramDetailDialog, parameters)
+			.subscribe(res => {
+
+			});
+
+	}
 }

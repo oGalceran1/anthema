@@ -25,7 +25,7 @@
 
                 <systelab-tabs class="slab-flex-1" (select)="selectedTab($event)">
                     <systelab-tab [id]="'Tab1'" [title]="'Tab 1'">
-                        <visit-grid #grid1 class="slab-flex-1 position-relative m-1">
+                        <visit-grid #grid1 class="slab-flex-1 position-relative m-1" [menu]="getMenu()" (action)="doMenuAction($event)">
                         </visit-grid>
                     </systelab-tab>
                     <systelab-tab [id]="'Tab2'" [title]="'Tab 2'" [warning]="true">
