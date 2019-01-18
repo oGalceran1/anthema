@@ -1,4 +1,4 @@
-import { Observable, of as observableOf } from 'rxjs';
+import { Observable, of, of as observableOf } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { I18nService } from 'systelab-translate/lib/i18n.service';
 import { ApiGlobalsService } from '@globals/globals.service';
@@ -93,10 +93,10 @@ export class MainComponent implements OnInit {
 			this.i18nService.get(['ERR_ERROR', 'ERR_IMPOSSIBLE_CHANGE_PASSWORD'])
 				.subscribe((res) => {
 					this.messagePopupService.showErrorPopup(res.COMMON_ERROR, res.COMMON_IMPOSSIBLE_CHANGE_PASSWORD);
-					return observableOf(false);
+					return of(false);
 				});
 		}
-		return observableOf(true);
+		return of(true);
 	}
 
 	public selectedTab(event: any) {

@@ -9,7 +9,6 @@ import { PatientSearchDialog } from './search/patient-search-dialog.component';
 import { PatientDialog } from './patient-detail-dialog/patient-dialog.component';
 import { ComponentsModule } from '@components/components.module';
 import { TherapeuticProgramModule } from '@features/therapeutic-program/therapeutic-program.module';
-import { PatientBannerComponent } from './patient-banner/patient-banner.component';
 
 @NgModule({
 	imports:         [
@@ -22,8 +21,7 @@ import { PatientBannerComponent } from './patient-banner/patient-banner.componen
 		ComponentsModule],
 	declarations:    [
 		PatientSearchDialog,
-		PatientDialog,
-		PatientBannerComponent
+		PatientDialog
 	],
 	exports:         [],
 	entryComponents: [
