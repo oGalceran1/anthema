@@ -23,6 +23,7 @@ import { LoginModule } from '@features/login/login.module';
 import { PatientModule } from '@features/patient/patient.module';
 import { ComponentsModule } from '@components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FollowUpModule } from '@features/follow-up/follow-up.module';
 
 @NgModule({
 	imports:         [
@@ -32,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		DragDropModule,
 		HttpClientModule,
 		PatientModule,
+		FollowUpModule,
 		ComponentsModule,
 		LoginModule,
 		SystelabTranslateModule.forRoot(),
